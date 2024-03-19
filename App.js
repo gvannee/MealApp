@@ -1,12 +1,63 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import MainScreen from './src/screens/MainScreen';
+import ListMealScreen from './src/screens/ListMealScreen';
+import MealDetailsScreen from './src/screens/MealDetails';
+import FavoriteScreen from './src/screens/FavoriteScreen';
+import { Style } from './src/constants/color';
+import { useFonts } from '@expo-google-fonts/poppins';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { HomeStackScreen } from './src/navigation/Navigation';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+  // const Stack = createBottomStackNavigator();
+  const [fontsLoaded] = useFonts({
+    "Poppins-Bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
+    "Poppins-Light": require("./assets/fonts/Poppins/Poppins-Light.ttf"),
+    "Poppins-Medium": require("./assets/fonts/Poppins/Poppins-Medium.ttf")
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <View style={styles.container}>
+    //   <Text>Open up App.js to start working on your app!</Text>
+    //   <StatusBar style="auto" />
+    // </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{
+        headerTintColor: 'black',
+        headerTitleStyle: {
+          fontFamily: 'Poppins-Medium',
+        },
+        headerStyle: {
+          backgroundColor: '#66D678',
+        },
+        headerTitleAlign: 'center'
+      }
+      }>
+        <Stack.Screen component={HomeStackScreen} name='Home' options={{
+          headerShown: false
+        }}/>
+        <Stack.Screen component={ListMealScreen} name='Meals'
+          options={{
+          }} />
+        <Stack.Screen name='Details' component={MealDetailsScreen}
+          options={{
+            StackBarShowLabel: false,
+            StackBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name='format-list-bulleted' color='white' size={30} />
+            )
+          }} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+
+
   );
 }
 
