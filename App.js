@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import MainScreen from './src/screens/MainScreen';
 import ListMealScreen from './src/screens/ListMealScreen';
 import MealDetailsScreen from './src/screens/MealDetails';
@@ -26,7 +26,7 @@ export default function App() {
   return (
     // <View style={styles.container}>
     //   <Text>Open up App.js to start working on your app!</Text>
-    //   <StatusBar style="auto" />
+    //   
     // </View>
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
@@ -45,16 +45,14 @@ export default function App() {
         }}/>
         <Stack.Screen component={ListMealScreen} name='Meals'
           options={{
+            
           }} />
         <Stack.Screen name='Details' component={MealDetailsScreen}
           options={{
-            StackBarShowLabel: false,
-            StackBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='format-list-bulleted' color='white' size={30} />
-            )
           }} />
 
       </Stack.Navigator>
+      <StatusBar style="auto" />
     </NavigationContainer>
 
 
@@ -64,8 +62,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+        ...Platform.select({
+            ios: {
+                paddingTop: 20,
+            },
+            android: {
+                paddingTop: 40,
+            },
+        }),
   },
 });

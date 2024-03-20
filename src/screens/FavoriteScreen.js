@@ -6,7 +6,7 @@ export default function FavoriteScreen () {
 
     return (
         <View>
-            <Text>Main Screen</Text>
+            <Text>Fav Screen</Text>
         </View>
     )
 }

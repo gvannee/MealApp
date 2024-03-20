@@ -1,11 +1,11 @@
 import { Text, View } from "react-native";
 
 
-export default function ListMealScreen () {
-
+export default function ListMealScreen ({route}) {
+    const {title} = route.params
     return (
         <View>
-            <Text>Main Screen</Text>
+            <Text>{title}</Text>
         </View>
     )
 }
