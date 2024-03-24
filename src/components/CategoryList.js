@@ -7,8 +7,8 @@ export default function CategoryList({navigation, categories}) {
     return (
         <View style = {style.container}>
             {
-                categories.map((category) => 
-                    <CategoryItem category={category} navigation={navigation}/>
+                categories.map((category, index) => 
+                    <CategoryItem category={category} navigation={navigation} key={index}/>
                 )
             }
         </View>

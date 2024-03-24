@@ -10,7 +10,7 @@ export default function CategoryItem({ navigation, category }) {
         <Pressable style={[style.container, {
             backgroundColor: category.color
         }]} onPress={() => {
-            navigation.navigate('Meals', {title: category.title})
+            navigation.navigate('Meals', {id: category.id})
         }
 
         }>
@@ -21,9 +21,9 @@ export default function CategoryItem({ navigation, category }) {
 
 const style = StyleSheet.create({
     container: {
-        padding: 20,
-        width: '50%',
-        height: 130,
+        padding: 15,
+        width: '40%',
+        height: 120,
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center'

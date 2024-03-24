@@ -236,6 +236,186 @@ export const MEALS = [
   ),
 
   new Meal(
+    'm20',
+    ['c7'],
+    'Pancakes',
+    'affordable',
+    'simple',
+    'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+    20,
+    [
+      '1 1/2 Cups all-purpose Flour',
+      '3 1/2 Teaspoons Baking Powder',
+      '1 Teaspoon Salt',
+      '1 Tablespoon White Sugar',
+      '1 1/4 cups Milk',
+      '1 Egg',
+      '3 Tablespoons Butter, melted'
+    ],
+    [
+      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
+      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
+      'Heat a lightly oiled griddle or frying pan over medium high heat.',
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+    ],
+    true,
+    false,
+    true,
+    false,
+    false
+  ),
+
+  new Meal(
+    'm21',
+    ['c7'],
+    'Pancakes',
+    'affordable',
+    'simple',
+    'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+    20,
+    [
+      '1 1/2 Cups all-purpose Flour',
+      '3 1/2 Teaspoons Baking Powder',
+      '1 Teaspoon Salt',
+      '1 Tablespoon White Sugar',
+      '1 1/4 cups Milk',
+      '1 Egg',
+      '3 Tablespoons Butter, melted'
+    ],
+    [
+      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
+      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
+      'Heat a lightly oiled griddle or frying pan over medium high heat.',
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+    ],
+    true,
+    false,
+    true,
+    false,
+    false
+  ),
+
+  new Meal(
+    'm22',
+    ['c7'],
+    'Pancakes',
+    'affordable',
+    'simple',
+    'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+    20,
+    [
+      '1 1/2 Cups all-purpose Flour',
+      '3 1/2 Teaspoons Baking Powder',
+      '1 Teaspoon Salt',
+      '1 Tablespoon White Sugar',
+      '1 1/4 cups Milk',
+      '1 Egg',
+      '3 Tablespoons Butter, melted'
+    ],
+    [
+      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
+      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
+      'Heat a lightly oiled griddle or frying pan over medium high heat.',
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+    ],
+    true,
+    false,
+    true,
+    false,
+    false
+  ),
+
+  new Meal(
+    'm23',
+    ['c7'],
+    'Pancakes',
+    'affordable',
+    'simple',
+    'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+    20,
+    [
+      '1 1/2 Cups all-purpose Flour',
+      '3 1/2 Teaspoons Baking Powder',
+      '1 Teaspoon Salt',
+      '1 Tablespoon White Sugar',
+      '1 1/4 cups Milk',
+      '1 Egg',
+      '3 Tablespoons Butter, melted'
+    ],
+    [
+      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
+      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
+      'Heat a lightly oiled griddle or frying pan over medium high heat.',
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+    ],
+    true,
+    false,
+    true,
+    false,
+    false
+  ),
+
+  new Meal(
+    'm24',
+    ['c7'],
+    'Pancakes',
+    'affordable',
+    'simple',
+    'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+    20,
+    [
+      '1 1/2 Cups all-purpose Flour',
+      '3 1/2 Teaspoons Baking Powder',
+      '1 Teaspoon Salt',
+      '1 Tablespoon White Sugar',
+      '1 1/4 cups Milk',
+      '1 Egg',
+      '3 Tablespoons Butter, melted'
+    ],
+    [
+      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
+      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
+      'Heat a lightly oiled griddle or frying pan over medium high heat.',
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+    ],
+    true,
+    false,
+    true,
+    false,
+    false
+  ),
+
+  new Meal(
+    'm25',
+    ['c7'],
+    'Pancakes',
+    'affordable',
+    'simple',
+    'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+    20,
+    [
+      '1 1/2 Cups all-purpose Flour',
+      '3 1/2 Teaspoons Baking Powder',
+      '1 Teaspoon Salt',
+      '1 Tablespoon White Sugar',
+      '1 1/4 cups Milk',
+      '1 Egg',
+      '3 Tablespoons Butter, melted'
+    ],
+    [
+      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
+      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
+      'Heat a lightly oiled griddle or frying pan over medium high heat.',
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+    ],
+    true,
+    false,
+    true,
+    false,
+    false
+  ),
+
+  new Meal(
     'm8',
     ['c8'],
     'Creamy Indian Chicken Curry',

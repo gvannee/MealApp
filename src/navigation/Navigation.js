@@ -7,7 +7,7 @@ export const HomeStackScreen = () => {
     const Tab = createBottomTabNavigator();
     return (
         <Tab.Navigator>
-            <Tab.Screen name='Category Meal' component={MainScreen} options={{
+            <Tab.Screen name='Home' component={MainScreen} options={{
                 
                 headerTitleAlign: 'center',
                 headerTitleStyle: {

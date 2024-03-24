@@ -18,7 +18,8 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     "Poppins-Bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
     "Poppins-Light": require("./assets/fonts/Poppins/Poppins-Light.ttf"),
-    "Poppins-Medium": require("./assets/fonts/Poppins/Poppins-Medium.ttf")
+    "Poppins-Medium": require("./assets/fonts/Poppins/Poppins-Medium.ttf"),
+    "Poppins-Semibold": require("./assets/fonts/Poppins/Poppins-SemiBold.ttf")
   });
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
@@ -40,16 +41,29 @@ export default function App() {
         headerTitleAlign: 'center'
       }
       }>
-        <Stack.Screen component={HomeStackScreen} name='Home' options={{
+        <Stack.Screen component={HomeStackScreen} name='Main' options={{
           headerShown: false
         }}/>
         <Stack.Screen component={ListMealScreen} name='Meals'
           options={{
             
           }} />
-        <Stack.Screen name='Details' component={MealDetailsScreen}
-          options={{
-          }} />
+        <Stack.Screen name='Details'  component={MealDetailsScreen}
+        
+          options={
+            (({route}) => ({
+              title: route.params.name, 
+              headerStyle: {
+                backgroundColor: 'white',
+              },
+              headerTitleAlign: 'center',
+              headerTitleStyle: {
+                fontSize: 18, // Change the font size here
+              },
+  
+            }))
+            
+          } />
 
       </Stack.Navigator>
       <StatusBar style="auto" />
