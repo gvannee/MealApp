@@ -8,9 +8,6 @@ export default function ListMealScreen({ navigation, route }) {
     const { id } = route.params;
     const mealsWithCategory = MEALS.filter(meal => meal.categoryIds.includes(id));
 
-    console.log(mealsWithCategory);
-
-
     return (
         <View style={style.container}>
             <MealList data={mealsWithCategory} navigation={navigation}/>

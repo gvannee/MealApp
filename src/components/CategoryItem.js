@@ -2,10 +2,6 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 
 export default function CategoryItem({ navigation, category }) {
-    const onClick = (id) => {
-        navigation.navigate('Meals')
-    }
-
     return (
         <Pressable style={[style.container, {
             backgroundColor: category.color

@@ -1,16 +1,16 @@
-import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
+import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import { StyleSheet } from "react-native";
-import MenuButton from "../components/MenuButton";
 
 
 export default function MealDetailsScreen({ route }) {
     const { id } = route.params;
     const meal = MEALS.filter(item => item.id == id);
-    console.log(meal[0]);
+    const ingredients = meal[0].ingredients;
+    const steps = meal[0].steps;
 
-    const handleClick = () => {
-        console.log("click");
+    const toUpperCase = (value) => {
+        return value.toUpperCase();
     }
     //divided into information, ingredients, steps
     return (
@@ -18,16 +18,49 @@ export default function MealDetailsScreen({ route }) {
 
             <ImageBackground source={require('../../assets/image/background.jpg')} style={style.contentBg}>
                 <Image src={meal[0].imageUrl} style={style.image} />
-                <View style={style.content}>
-                    <View>
-                    <TouchableOpacity onPress={() => handleMenuItemPress("Option 1")} style={style.menuItem}>
-              <Text>Option 1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => handleMenuItemPress("Option 2")} style={style.menuItem}>
-              <Text>Option 2</Text>
-            </TouchableOpacity>
+                <ScrollView style={style.content} contentContainerStyle={{ alignItems: 'center'}}>
+                    <View style={style.padding}>
+                        <Text style={style.header}>Information </Text>
+                        <View>
+                            <View style={style.information}>
+                                <Text style={style.contentTitle}>Affordability:</Text>
+                                <Text style={style.contentInfo}>{toUpperCase(meal[0].affordability)}</Text>
+                            </View>
+                            <View style={style.information}>
+                                <Text style={style.contentTitle}>Complexity: </Text>
+                                <Text style={style.contentInfo}>{toUpperCase(meal[0].complexity)}</Text>
+                            </View>
+                            <View style={style.information}>
+                                <Text style={style.contentTitle}>Duration: </Text>
+                                <Text style={style.contentInfo}>{meal[0].duration}</Text>
+                            </View>
+                            <View style={style.information}>
+                                <Text style={style.contentTitle}>Gluten Free: </Text>
+                                <Text style={style.contentInfo}>{meal[0].isGlutenFree ? 'Yes' : 'No'}</Text>
+                            </View>
+                            <View style={style.information}>
+                                <Text style={style.contentTitle}>Lastose Free: </Text>
+                                <Text style={style.contentInfo}>{meal[0].isLactoseFree ? 'Yes' : 'No'}</Text>
+                            </View>
+                            <View style={style.information}>
+                                <Text style={style.contentTitle}>Vegan: </Text>
+                                <Text style={style.contentInfo}>{meal[0].isVegan ? 'Yes' : 'No'}</Text>
+                            </View>
+                        </View>
+                        <Text style={style.header}>Ingredients </Text>
+                        <View style={style.gap}>
+                            {ingredients.map((item, index) => (
+                                <Text key={index} style={style.contentSize}>{`\u2022 ${item}`}</Text>
+                            ))}
+                        </View>
+                        <Text style={style.header}>How to cook</Text>
+                        <View style={style.gap}>
+                            {steps.map((item, index) => (
+                                <Text key={index} style={style.contentSize}>{index + 1}: {item}</Text>
+                            ))}
+                        </View>
                     </View>
-                </View>
+                </ScrollView>
             </ImageBackground>
         </View>
     )
@@ -38,24 +71,30 @@ const style = StyleSheet.create({
         width: '100%',
         height: 300,
         resizeMode: 'cover',
-
     },
 
-    menuItem: {
-        marginHorizontal: 10,
-        paddingVertical: 5,
-        paddingHorizontal: 10,
-        backgroundColor: "#fff",
-        borderRadius: 5,
+    header: {
+        fontFamily: 'Poppins-Bold',
+        alignSelf: 'center',
+        fontSize: 15
+    },
+
+    padding: {
+        paddingBottom: 20
     },
 
     content: {
         width: '90%',
         padding: 10,
-        backgroundColor: "rgba(226, 241, 230, 0.7)",
-        alignItems: 'center',
-        alignSelf: 'center'
-        
+        backgroundColor: "rgba(226, 241, 230, 0.9)",
+        alignSelf: 'center',
+        marginBottom: 20,
+        paddingBottom: 20
+    },
+
+    contentTitle: {
+        fontFamily: 'Poppins-Semibold',
+
     },
 
     contentBg: {
@@ -63,7 +102,25 @@ const style = StyleSheet.create({
     },
 
     container: {
-        justifyContent: 'center',
-        
+        justifyContent: 'center'
+    },
+
+    information: {
+        flexDirection: 'row',
+        gap: 5
+    },
+
+    gap: {
+        gap: 5
+    },
+
+    contentSize:{
+        fontFamily: 'Poppins-Medium',
+        fontSize: 15
+    },
+
+    contentInfo: {
+        fontFamily: 'Poppins-Medium',
+        fontSize: 13
     }
 })
